@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Angular-Assignment6-Forms';
+  subscriptions = ['Basic', 'Advanced', 'Pro'];
+  subDefault = 'Advanced';
+  @ViewChild('form') sngForm: NgForm;
+
+  onSubmit(){
+    console.log(this.sngForm.value);
+  }
 }
